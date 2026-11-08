@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/clubs';
+const API_URL = '/api/clubs';
 
 // Fetch and display clubs on page load
 window.addEventListener('DOMContentLoaded', () => {

@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const db = require('./backend/db');
+const path =require('path');
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 const app = express();
 app.get('/', (req, res) => {
