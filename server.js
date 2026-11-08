@@ -3,12 +3,13 @@ const cors = require('cors');
 require('dotenv').config();
 const db = require('./backend/db');
 const path =require('path');
-app.use(express.static(path.join(__dirname, 'frontend')));
 
 const app = express();
-app.get('/', (req, res) => {
-    res.send('Backend is live! API is working.');
-})
+
+app.use(cors());
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'frontend')));
+
 const PORT = process.env.PORT || 3000;
 
 // Middleware
