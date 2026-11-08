@@ -4,6 +4,9 @@ require('dotenv').config();
 const db = require('./backend/db');
 
 const app = express();
+app.get('/', (req, res) => {
+    res.send('Backend is live! API is working.');
+})
 const PORT = process.env.PORT || 3000;
 
 // Middleware
