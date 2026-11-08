@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Club Profile Management</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f6f9; color: #333; }
+        h1, h2 { color: #2c3e50; }
+        .form-container, .table-container { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        input, textarea { display: block; width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { padding: 10px 15px; background: #3498db; color: #white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        button.delete-btn { background: #e74c3c; }
+        button.delete-btn:hover { background: #c0392b; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        th { background: #2c3e50; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>Campus Club Profile Management</h1>
+
+    <div class="form-container">
+        <h2 id="form-title">Add New Club</h2>
+        <form id="club-form">
+            <input type="hidden" id="club-id">
+            <label>Club Name:</label>
+            <input type="text" id="name" required>
+            <label>Description:</label>
+            <textarea id="description"></textarea>
+            <label>Category:</label>
+            <input type="text" id="category">
+            <label>President Name:</label>
+            <input type="text" id="president_name">
+            <label>Member Count:</label>
+            <input type="number" id="member_count">
+            <label>Meeting Day:</label>
+            <input type="text" id="meeting_day">
+            <button type="submit" id="submit-btn">Save Club</button>
+            <button type="button" id="cancel-btn" style="display:none; background:#7f8c8d; margin-top:5px;" onclick="resetForm()">Cancel Edit</button>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <h2>Existing Clubs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>President</th>
+                    <th>Members</th>
+                    <th>Meeting Day</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="club-table-body">
+                <!-- Rows will be injected via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
